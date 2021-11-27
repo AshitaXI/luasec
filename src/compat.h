@@ -21,8 +21,9 @@
 //------------------------------------------------------------------------------
 
 #if (LUA_VERSION_NUM == 501)
-
+#ifndef luaL_testudata
 #define luaL_testudata(L, ud, tname)  lsec_testudata(L, ud, tname)
+#endif
 #define setfuncs(L, R)    luaL_register(L, NULL, R)
 #define lua_rawlen(L, i)  lua_objlen(L, i)
 

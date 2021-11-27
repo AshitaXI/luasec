@@ -39,6 +39,13 @@
 #define X509_up_ref(c)   CRYPTO_add(&c->references, 1, CRYPTO_LOCK_X509)
 #endif
 
+ // Imported from LuaSocket > wsocket.c
+#ifndef WAITFD_R
+#define WAITFD_R        1
+#define WAITFD_W        2
+#define WAITFD_E        4
+#define WAITFD_C        (WAITFD_E|WAITFD_W)
+#endif
 
 /**
  * Underline socket error.
